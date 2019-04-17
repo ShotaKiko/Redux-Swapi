@@ -9,11 +9,13 @@ export const FAILURE = "FAILURE"
 export const fetchCharacters = () => dispatch => {
     dispatch({ type: FETCHING });
     axios
-        .get("https://swapi.co/api/people")
-        .then(res => dispatch({ 
-            type: SUCCESS, 
-            payload: res.data
-        }))
+        .get("https://swapi.co/api/people/")
+        .then(({ data }) => { 
+            dispatch({ 
+                type: SUCCESS, 
+                payload: data.results
+            })
+        })
         .catch(err => dispatch({
             type: FAILURE,
             payload: err

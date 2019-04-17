@@ -1,4 +1,8 @@
-import { FETCHING, SUCCESS, FAILURE } from "../actions";
+import { 
+  FETCHING, 
+  SUCCESS, 
+  FAILURE 
+} from "../actions";
 const initialState = {
   characters: [],
   fetching: false,
